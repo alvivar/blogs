@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   postgres:
-    container_name: bp
+    container_name: bd
     image: postgres
     restart: always
     ports:
@@ -13,8 +13,8 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
   api:
-    container_name: ta
-    build: ./api/
+    container_name: bs
+    build: ./blogs/
     environment:
       DATABASE_URL: 'postgres://someuser:somepassword@postgres:5432/someblogs'
 volumes:
