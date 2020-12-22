@@ -1,0 +1,45 @@
+
+    users
+        id
+        name
+        email
+        password
+
+    blogs
+        id
+        users_id
+        name
+        description
+
+    posts
+        id
+        users_id
+        blogs_id
+        title
+        content
+
+    posts_tags
+        id
+        posts_id
+        tags_id
+
+    tags
+        id
+        name
+        description
+
+    comments
+        id
+        users_id
+        posts_id
+        content
+
+    replies  # Closure Table pattern
+        id
+        comments_id  # Ancestor
+        comments_id  # Descendant
+
+
+About the closure table pattern:
+    https://www.slideshare.net/billkarwin/models-for-hierarchical-data
+    https://stackoverflow.com/tags/transitive-closure-table/info
