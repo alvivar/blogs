@@ -9,15 +9,6 @@ CREATE TABLE users (
 	CONSTRAINT users_pk PRIMARY KEY (id)
 );
 
--- DROP TABLE tags;
-
-CREATE TABLE tags (
-	id serial NOT NULL,
-	"name" varchar(256) NOT NULL,
-	description varchar(256) NOT NULL,
-	CONSTRAINT tags_pk PRIMARY KEY (id)
-);
-
 -- DROP TABLE blogs;
 
 CREATE TABLE blogs (
@@ -40,6 +31,15 @@ CREATE TABLE posts (
 	CONSTRAINT posts_pk PRIMARY KEY (id),
 	CONSTRAINT posts_users_fk FOREIGN KEY (user_id) REFERENCES users(id),
 	CONSTRAINT posts_blogs_fk FOREIGN KEY (blog_id) REFERENCES blogs(id)
+);
+
+-- DROP TABLE tags;
+
+CREATE TABLE tags (
+	id serial NOT NULL,
+	"name" varchar(256) NOT NULL,
+	description varchar(256) NOT NULL,
+	CONSTRAINT tags_pk PRIMARY KEY (id)
 );
 
 -- DROP TABLE posts_tags;
