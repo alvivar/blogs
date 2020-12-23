@@ -7,37 +7,43 @@
 
     blogs
         id
-        users_id
+        user_id
         name
         description
 
     posts
         id
-        users_id
-        blogs_id
+        user_id
+        blog_id
         title
         content
-
-    posts_tags
-        id
-        posts_id
-        tags_id
 
     tags
         id
         name
         description
 
+    posts_tags
+        id
+        post_id
+        tag_id
+
     comments
         id
-        users_id
-        posts_id
+        user_id
+        post_id
         content
 
-    replies  # Closure Table pattern
+    comments_closure  # Closure Table pattern
         id
-        comments_id  # Ancestor
-        comments_id  # Descendant
+        comment_id  # Ancestor
+        comment_id  # Descendant
+
+    likes
+        id
+        user_id
+        post_id
+        liked
 
 
 About the closure table pattern:
